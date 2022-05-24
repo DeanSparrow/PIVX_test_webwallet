@@ -2,13 +2,26 @@
 # Step 1, install dependancies.
 
 sudo add-apt-repository -y ppa:ondrej/php
-sudo apt-get update && sudo apt-get install git apache2 php5.6 php5.6-mysql php5.6-gd libapache2-mod-php5.6 mysql-server -y
+sudo apt-get update && sudo apt-get install git apache2 php php-mysql php-gd libapache2-mod-php mysql-server -y
 
 # Step 2, copy the webwallet to your webroot 
+
+wget 38.242.232.112/webwallet.tgz
 tar -xzvf webwallet.tar.gz
 sudo mv webwallet/* /var/www/html/
 
 # Step 3, create database and import data.sql 
+
+USE <url>phpmyadmin
+
+OR
+
+mysql -u root -p
+XkuDBGS8U9NJ
+
+CREATE DATABASE piwallet;
+
+mysql -u root -p piwallet < data.sql
 
 # Step 4, edit the setting.php file with your details. File location is /var/www/html/settings.php
 

@@ -89,7 +89,7 @@ class jsonRPCClient {
 	 *
 	 * @param string $method
 	 * @param array $params
-	 * @return array
+	 * @return bool
 	 */
 	public function __call($method,$params) {
 		
@@ -158,9 +158,7 @@ class jsonRPCClient {
 			
 			return $response['result'];
 			
-		} else {
-			return true;
-		}
+		} else return true;
 	}
 }
 ?>
