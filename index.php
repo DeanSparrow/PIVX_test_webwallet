@@ -46,7 +46,7 @@ if (!empty($_SESSION['user_session'])) {
           $json['transactionList'] = $client->getTransactionList($user_session);
           echo json_encode($json);
           exit;
-
+          break;
         case "withdraw":
           $json['success'] = false;
           if (!WITHDRAWALS_ENABLED) {
@@ -71,7 +71,7 @@ if (!empty($_SESSION['user_session'])) {
           }
           echo json_encode($json);
           exit;
-
+          break;
         case "password":
           $user = new User($mysqli);
           $json['success'] = false;
@@ -94,7 +94,7 @@ if (!empty($_SESSION['user_session'])) {
           }
           echo json_encode($json);
           exit;
-
+          break;
       }
     }
     if (!empty($_POST['action'])) {
@@ -188,7 +188,7 @@ if (!empty($_SESSION['user_session'])) {
                   $json['transactionList'] = $client->getTransactionList($info['username']);
                   echo json_encode($json);
                   exit;
-
+                  break;
                 case "withdraw":
                   $json['success'] = false;
                   if (!WITHDRAWALS_ENABLED) {
@@ -208,7 +208,7 @@ if (!empty($_SESSION['user_session'])) {
                   }
                   echo json_encode($json);
                   exit;
-
+                  break;
                 case "password":
                   $json['success'] = false;
                   if ((is_numeric($_GET['i'])) && (!empty($_POST['password']))) {
@@ -224,7 +224,7 @@ if (!empty($_SESSION['user_session'])) {
                   }
                   echo json_encode($json);
                   exit;
-
+                  break;
               }
             }
             if (!empty($_POST['action'])) {
@@ -368,7 +368,8 @@ if (!empty($_SESSION['user_session'])) {
           break;
       }
     }
-
+  } else {
+  }
   include("view/header.php");
   include("view/home.php");
   include("view/footer.php");
