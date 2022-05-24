@@ -1,0 +1,23 @@
+#setup the webwallet
+# Step 1, install dependancies.
+
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt-get update && sudo apt-get install git apache2 php5.6 php5.6-mysql php5.6-gd libapache2-mod-php5.6 mysql-server -y
+
+# Step 2, copy the webwallet to your webroot 
+tar -xzvf webwallet.tar.gz
+sudo mv webwallet/* /var/www/html/
+
+# Step 3, create database and import data.sql 
+
+# Step 4, edit the setting.php file with your details. File location is /var/www/html/settings.php
+
+
+Note: make sure your coinname.conf file ,example is pivx.conf, the settings is similar to the attached file, pivx.conf .
+don't forget to change the favicon icon. with your coin icon , located at assets/img  .
+
+
+#........................
+admin details.
+email: admin3000@gmail.com
+password: cohWefo8sengiepo
